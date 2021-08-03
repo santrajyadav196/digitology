@@ -1,0 +1,16 @@
+<% layout ('layouts/boilerplate') %> 
+
+<div class="container">
+    <h4><%= category[0].toUpperCase() + category.slice(1) %> Tasks</h4>
+ <ul>
+     <% for(let task of tasks) { %> 
+        <li><a href="tasks/<%= task._id %>"><%= task.name %> </a></li>
+     <% } %>  
+</ul>
+<a class="btn btn-primary" href="/tasks/new">Create Task</a>
+<%if(category !== 'All') {%>
+<a class="btn btn-info" href="/tasks">All Tasks</a>
+<% } %>
+</div>
+                
+    

@@ -1,0 +1,36 @@
+<% layout ('layouts/boilerplate') %> 
+   <div class="row">
+       <div class="container">
+           <div class="col-6 offset-3">
+           <h3 class="text-center">Create A Task</h3>
+          <form action="/tasks" method="POST">
+         <div class='mb-3'>
+        <label class='form-label' for="name">Task Name:</label>
+        <input class='form-control' type="text" name="name" id="name" placeholder="task name">
+        </div>
+         <div class='mb-3'>
+        <label class='form-label' for="category">Select Category:</label>
+        <select class='form-control' name="category" id="category">
+            <% for(let category of categories) { %> 
+                <option value="<%= category %>"><%= category%> </option>
+            <% } %> 
+        </select>
+        </div>
+        <div class="mb-3">
+        <label class='form-label' for ="description">Description:</label>
+         <textarea class='form-control' type="text" id="description" name="description" 
+                placeholder="Descrition" cols="30" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+        <button class="btn btn-success">Submit</button>
+        </div>
+    </form>
+       <div class="mb-3">
+           <a class="btn btn-primary" href="/tasks">All Tasks</a>
+       </div>
+       </div>
+       </div>
+   </div>
+
+
+      
